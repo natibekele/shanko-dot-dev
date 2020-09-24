@@ -1,5 +1,57 @@
+.preview {
+  border: solid 1px #eeeeee;
+  height: 440px;
+  width: 275px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  margin: auto;
+  /* transition: ease-in 0.05s; */
+}
+.preview:hover {
+  box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+  /* transform: scale(1.01); */
+}
+.previewBody {
+  padding: 0px 8px;
+}
 .previewTitle {
-  font-size: 1.5em;
+  font-size: 1.2rem;
+}
+.previewIntro {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.previewIntro p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.previewButton { 
+    position: absolute;
+    bottom: 16px;
+    left: 10%;
+    margin: auto;
+    margin-top: 16px;
+    width: 80%;
+    min-width: 80px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #6610F2,#d11149);
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+}
+.previewButton a {
+  text-decoration: none;
+}
+.previewButton:hover {
+  transform: scale(1.05);
 }
 
 .tag {
@@ -11,4 +63,10 @@
   border-radius: 2px;
   border: 1px solid #A0A0A0;
   margin-right: .5em;
+}
+
+@media (max-width: 800px) {
+  .preview {
+    width: 80%;
+  }
 }

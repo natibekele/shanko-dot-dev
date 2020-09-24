@@ -1,4 +1,6 @@
 const Promise = require('bluebird')
+const { reject } = require('lodash')
+const { resolve } = require('path')
 const path = require('path')
 
 exports.createPages = ({ graphql, actions }) => {
@@ -33,6 +35,39 @@ exports.createPages = ({ graphql, actions }) => {
             component: blogPost,
             context: {
               slug: post.node.slug,
+            },
+          })
+        })
+      })
+    )
+    const projectPost = path.resolve('./src/templates/project-post.js')
+    resolve(
+      graphql(
+        `
+      {
+        allContentfulProject {
+          edges {
+            node {
+              projectTitle
+              slug
+            }
+          }
+        }
+      }
+    `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        const projects = result.data.allContentfulProject.edges
+        projects.forEach(project => {
+          createPage({
+            path: `/project/${project.node.slug}/`,
+            component: projectPost,
+            context: {
+              slug: project.node.slug,
             },
           })
         })

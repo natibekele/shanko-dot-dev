@@ -1,0 +1,19 @@
+.container {
+    display: flex; 
+    background: white;
+    /* position: fixed; */
+    /* width: calc(100% - 5vw); */
+    overflow: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+}
+
+@media (max-width: 750px) {
+    .container {
+        margin: 0;
+        flex-direction: column;
+    }
+    
+}

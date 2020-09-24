@@ -1,0 +1,31 @@
+.projectTitle {
+
+}
+.projectLink {
+    height: 40px;
+    width: 220px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to right, #6610F2,#d11149);
+    border: none;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+}
+
+.cToolsUsed {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 8px;
+}
+.tool {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+}
