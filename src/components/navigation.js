@@ -19,7 +19,9 @@ class Navigation extends React.Component {
   }
 
   render() {
+    if(window) {
     this.state.showMobileMenu? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll';
+  }
     return (
       <div className={styles.cNavigation}>
         <nav role="navigation" className={styles.navigation}>
