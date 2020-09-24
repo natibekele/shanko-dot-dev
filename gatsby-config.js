@@ -25,7 +25,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful starter",
+    title: "shanko",
   },
   pathPrefix: "/gatsby-contentful-starter",
   plugins: [
@@ -37,5 +37,12 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve:`gatsby-source-instagram`,
+      options: {
+        username: `37269221`,
+      }
+    }
   ],
+  
 };

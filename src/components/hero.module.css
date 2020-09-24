@@ -24,6 +24,25 @@
   padding: 0 0.5em;
 }
 
+.secondaryImages {
+  display: flex;
+  height: 20vh;
+  max-height: 400px;
+}
+.secondaryHeroImage {
+  flex: 1;
+}
+.secondaryHeroImage img {
+  width: 50%;
+  height: auto;
+}
+.floatingImage {
+  width: 320px;
+  height: 200px;
+  float: right;
+  position: absolute;
+  top: 50%;
+}
 @media(min-width: 600px) {
   .heroDetails {
     font-size: 16px;
