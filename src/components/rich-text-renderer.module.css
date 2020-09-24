@@ -1,0 +1,17 @@
+.text {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    font-weight: lighter;
+    font-weight: 300;
+}
+.text a {
+    color: #6610F2;
+}
+.bodyImage {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: solid 1px lightgray;
+ 
+}
