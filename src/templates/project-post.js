@@ -76,7 +76,7 @@ export const pageQuery = graphql`
              json
             }
             toolsUsed{
-             fluid( maxWidth: 48) {
+             fluid( maxWidth: 48, maxHeight: 48) {
                 ...GatsbyContentfulFluid_tracedSVG
                 }
             description
