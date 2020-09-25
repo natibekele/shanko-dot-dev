@@ -1,0 +1,9 @@
+.errorImage {
+    max-height: 400px;
+    max-width: 400px;
+    margin: auto;
+    width: 100%;
+}
+.goHome {
+    color: #6610F2;
+}
