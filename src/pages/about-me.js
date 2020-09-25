@@ -64,7 +64,7 @@ query AboutMeQuery {
               }
             }
             image {
-                fluid(maxWidth: 500, background: "rgb:000000") {
+                fluid(maxWidth: 500, maxHeight: 500, background: "rgb:000000") {
                   ...GatsbyContentfulFluid_tracedSVG
                 }
               }
