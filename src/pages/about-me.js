@@ -5,7 +5,7 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import styles from './about-me.module.css'
 import Layout from '../components/layout'
-import { GrTwitter, GrInstagram, GrLinkedinOption, GrGithub, GrMenu } from "react-icons/gr";
+import { GrTwitter, GrInstagram, GrLinkedinOption, GrGithub } from "react-icons/gr";
 
 class AboutMe extends React.Component {
     render() {
