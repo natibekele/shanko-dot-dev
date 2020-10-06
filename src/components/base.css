@@ -131,7 +131,7 @@ div {
   min-width: 100px;
   min-height: 160px;
   display: block;
-  border: 1px solid lightgray;
+  border: solid 1px #eeeeee;
   margin: 8px;
   padding: 8px;
   border-radius: 8px;
