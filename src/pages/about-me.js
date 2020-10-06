@@ -30,10 +30,10 @@ class AboutMe extends React.Component {
                             </div>
                         </div>
                         <div className={styles.contactMe}>
-                            <a className={styles.contactOption} aria-label="instagram" href="https://instagram.com/natiboi_" target="_blank" rel="noreferrer"><GrInstagram /></a>
-                            <a className={styles.contactOption} aria-label="twitter" href="https://twitter.com/natiboi__" target="_blank" rel="noreferrer"><GrTwitter /></a>
-                            <a className={styles.contactOption} aria-label="linkedin" href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
-                            <a className={styles.contactOption} aria-label="github" href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
+                            <a className={styles.contactOptionInsta} aria-label="instagram" href="https://instagram.com/natiboi_" target="_blank" rel="noreferrer"><GrInstagram /></a>
+                            <a className={styles.contactOptionTwitter} aria-label="twitter" href="https://twitter.com/natiboi__" target="_blank" rel="noreferrer"><GrTwitter /></a>
+                            <a className={styles.contactOptionLinkedin} aria-label="linkedin" href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
+                            <a className={styles.contactOptionGithub} aria-label="github" href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
                         </div>
 
                         <div dangerouslySetInnerHTML={{ __html: person.shortBio.childMarkdownRemark.html }}>
