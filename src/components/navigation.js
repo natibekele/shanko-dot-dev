@@ -18,6 +18,7 @@ class Navigation extends React.Component {
     this.setState(prevState => ({ showMobileMenu: !prevState.showMobileMenu }))
   }
 
+
   componentDidUpdate() {
     this.state.showMobileMenu? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll';
   }
@@ -43,14 +44,16 @@ class Navigation extends React.Component {
               <Link to="/about-me/">About me</Link>
             </li>
             <div className={styles.socialLinks}>
-              <a href="https://instagram.com/natiboi_" target="_blank" rel="noreferrer"><GrInstagram /></a>
-              <a href="https://twitter.com/natiboi__" target="_blank" rel="noreferrer"><GrTwitter /></a>
-              <a href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
-              <a href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
+              <a href="https://instagram.com/natiboi_" aria-label="instagram" target="_blank" rel="noreferrer"><GrInstagram /></a>
+              <a href="https://twitter.com/natiboi__" aria-label="twitter" target="_blank" rel="noreferrer"><GrTwitter /></a>
+              <a href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" aria-label="linkedin" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
+              <a href="https://github.com/natibekele" aria-label="github" target="_blank" rel="noreferrer"><GrGithub /></a>
             </div>
           </ul>
 
-          <div className={styles.mobileHamburger} onClick={this.toggleMobileMenu}>
+          <div className={styles.mobileHamburger} onClick={this.toggleMobileMenu}
+            onKeyPress={()=>{}}
+            role="button" tabIndex="0">
             <GrMenu />
           </div>
           {this.state.showMobileMenu ?

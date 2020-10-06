@@ -21,7 +21,7 @@ export default ({ article }) => (
           className ={styles.previewIntro}
         />
         <button className={styles.previewButton}>
-          <label to={`/blog/${article.slug}`}>View Post</label>
+          <Link to={`/blog/${article.slug}`}>View Post</Link>
         </button>
       </div>
     </Link>

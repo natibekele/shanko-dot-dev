@@ -10,7 +10,7 @@
     max-width: 800px;
     margin: auto;
 }
-.contactOption {
+.contactMe a {
     margin: 8px 8px 8px 0;
     display: flex;
     align-items: center;
@@ -22,9 +22,25 @@
     width: 44px;
     box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
 }
-.contactOption svg {
+.contactMe a svg {
     height: 80%;
     width: 80%;
+}
+.contactOptionInsta {
+    background: radial-gradient(circle at 30% 107%, #f58529 0%, #FEDA77 10%,#DD2A7B,#8134AF,#515BD4);
+    color: #fff;
+}
+.contactOptionTwitter {
+    background: #1DA1F2;
+    color: #fff;
+}
+.contactOptionLinkedin {
+    background: #006192;
+    color: #fff;
+}
+.contactOptionGithub {
+    background: #333333;
+    color: #fff;
 }
 .card {
     display: flex;
