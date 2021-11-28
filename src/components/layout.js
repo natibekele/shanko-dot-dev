@@ -9,13 +9,11 @@ class Template extends React.Component {
     const { children } = this.props
 
     return (
-      <Container>
-        <div className={styles.topBar} />
-        
-        <Navigation />
+      <Container className={styles.pageLayout}>
         <div className={styles.layoutBody} >
           {children}
         </div>
+        <Navigation />
       </Container>
     )
   }

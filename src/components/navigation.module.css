@@ -1,28 +1,37 @@
 .cNavigation {
-  top: 32px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  /*top: 32px;*/
+  /*left: 0;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*height: 100vh;*/
   /* width: 15vw; */
-  min-width: 200px;
-  max-width: 200px;
-  font-size: 1.25em;
+  /*min-width: 200px;*/
+  /*max-width: 200px;*/
+  /*font-size: 1.25em;*/
+  right: 0;
+  width: auto;
+  height: 90vh;
+  max-height: 50.1rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .navigation {
-  position: fixed;
-  top: 32px;
+  height: 100%;
+  width: 100%;
 }
 .socialLinks {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 .socialLinks svg {
-  margin: 16px;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin: 0.8rem;
   cursor: pointer;
-  color: #f17105;
+  color: var(--black);
 }
 
 .navTitle {
@@ -40,12 +49,18 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .menuItem {
+  width: auto;
+  height: fit-content;
+  text-align:center;
   display: block;
-  align-items: center;
-  margin: 16px;
+  list-style: none;
+  transform: rotate(-90deg);
 }
 .menuItem:hover {
   background-color: #eeeeee;
@@ -53,9 +68,12 @@
 
 .menuItem a {
   font-size: 1rem;
-  font-weight: 600;
-  color: #d11149;
+  line-height: 1.125;
+  letter-spacing: 0.24px;
+  font-weight: 500;
+  color: var(--black);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .mobileHamburger {

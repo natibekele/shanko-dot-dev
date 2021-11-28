@@ -1,0 +1,125 @@
+:root {
+    font-size: 62.5%;
+  --font-sans: 'PP Eiko', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --font-serif: 'Times New Roman', Times, serif;
+
+  /* palette */
+  --white: #fff;
+  --black: #3d3d3d;
+  --black-fade-5: rgba(0, 0, 0, 0.05);
+  --black-fade-10: rgba(0, 0, 0, 0.1);
+  --raisin-black: #1e1e24;
+
+
+  /* radii */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+
+  /* spacing */
+  --space-sm: 0.4rem;
+  --space-md: 0.8rem;
+  --space-lg: 1.6rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.4rem;
+  --space-3xl: 4.8rem;
+  --space-4xl: 6.9rem;
+
+  /* line-height */
+  --solid: 1;
+  --dense: 1.25;
+  --default: 1.5;
+  --loose: 1.75;
+
+  /* font-weight */
+  --thin: 100;
+  --light: 300;
+  --body: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+  --extrabold: 800;
+  --heavy: 900;
+
+  /* font-size */
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-md: 1.6rem;
+  --text-lg: 1.8rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.4rem;
+  --text-3xl: 3.6rem;
+  --text-4xl: 4.8rem;
+  --text-5xl: 6.4rem;
+  --text-6xl: 7.6rem;
+  --text-7xl: 10.4rem;
+
+  /* font style */
+  --less-emphasis: var(--body) var(--text-sm)/100% var(--font-sans);
+  --least-emphasis: var(--body) var(--text-xs)/100% var(--font-sans);
+
+  /* tokens */
+  /* colors */
+  /*--primary: var(--cerulean-blue);
+  --primary-sat: var(--cerulean-blue-100);
+  --secondary: var(--blue-jeans);
+  --tertiary: var(--xiketic);
+  --background: var(--lavender-blush);
+  --border: var(--black-fade-5);*/
+
+  /* text */
+  /* color */
+  --text-color: var(--raisin-black);
+  /* size */
+  --text-lead: var(--text-lg);
+  --text-prose: var(--text-md);
+  --text-title: var(--text-3xl);
+  /* tracking */
+  --text-prose-tracking: -0.011em;
+
+  /* size */
+  --size-gutter: var(--space-2xl);
+  --size-logo: var(--space-2xl);
+  --size-max-width: 140rem;
+
+  --gradient: linear-gradient(158deg, rgba(242,242,242,1) 4%, rgba(255,245,245,0.3) 17%, rgba(202,220,233,0.5) 51%, rgba(255,245,245,0.3) 75%, rgba(242,242,242,1) 89%);
+  --semi-black-overlay: rgba(0,0,0,0.55);
+
+  --shadow-color: 0deg 0% 80%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.45),
+    0.4px 0.8px 0.9px -1.5px hsl(var(--shadow-color) / 0.41),
+    1.1px 2.1px 2.5px -2.9px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.47),
+    0.8px 1.6px 1.9px -1px hsl(var(--shadow-color) / 0.44),
+    2.1px 4.2px 5px -2px hsl(var(--shadow-color) / 0.4),
+    5.3px 10.6px 12.5px -2.9px hsl(var(--shadow-color) / 0.37);
+  --shadow-elevation-high:
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.44),
+    1.4px 2.7px 3.2px -0.4px hsl(var(--shadow-color) / 0.42),
+    2.6px 5.2px 6.1px -0.8px hsl(var(--shadow-color) / 0.41),
+    4.5px 9px 10.6px -1.3px hsl(var(--shadow-color) / 0.39),
+    7.5px 14.9px 17.6px -1.7px hsl(var(--shadow-color) / 0.37),
+    12px 24px 28.4px -2.1px hsl(var(--shadow-color) / 0.36),
+    18.6px 37.2px 44px -2.5px hsl(var(--shadow-color) / 0.34),
+    27.8px 55.5px 65.6px -2.9px hsl(var(--shadow-color) / 0.32);
+}
+
+@media (min-width: 480px) {
+  :root {
+    --size-gutter: var(--space-3xl);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-lead: var(--text-2xl);
+    --text-title: var(--text-4xl);
+    --text-prose-tracking: -0.014em;
+    --text-prose: var(--text-lg);
+  }
+}

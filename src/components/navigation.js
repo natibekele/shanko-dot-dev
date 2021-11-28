@@ -23,27 +23,27 @@ class Navigation extends React.Component {
     return (
       <div className={styles.cNavigation}>
         <nav role="navigation" className={styles.navigation}>
-          <h2 className={styles.navTitle}>shanko</h2>
           <ul className={styles.menu}>
             <li className={styles.menuItem}>
               <Link to="/">Home</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link to="/blog/">Blog</Link>
-            </li>
-            <li className={styles.menuItem}>
               <Link to="/project/">Projects</Link>
             </li>
             <li className={styles.menuItem}>
-              <Link to="/about-me/">About me</Link>
+              <Link to="/blog/">Blog</Link>
             </li>
-            <div className={styles.socialLinks}>
+            <li className={styles.menuItem}>
+              <Link to="/about-me/">About</Link>
+            </li>
+          </ul>
+
+          {/*<div className={styles.socialLinks}>
               <a href="https://instagram.com/natiboi" target="_blank" rel="noreferrer"><GrInstagram /></a>
               <a href="https://twitter.com/natiboi_" target="_blank" rel="noreferrer"><GrTwitter /></a>
               <a href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
               <a href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
-            </div>
-          </ul>
+          </div>*/}
 
           <div className={styles.mobileHamburger} onClick={this.toggleMobileMenu}>
             <GrMenu />
