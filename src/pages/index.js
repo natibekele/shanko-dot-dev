@@ -11,9 +11,9 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const projects = get(this, 'props.data.allContentfulProject.edges')
-    const insta = get(this, 'props.data.allInstaNode.edges')
+    // const insta = get(this, 'props.data.allInstaNode.edges')
 
-    insta.sort((a, b) => b.node.timestamp - a.node.timestamp)
+    // insta.sort((a, b) => b.node.timestamp - a.node.timestamp)
 
 
     return (
@@ -23,32 +23,32 @@ class RootIndex extends React.Component {
           <div className="row">
             <div className="column">
               {
-                insta.map(({ node }, index) => {
-                  return (
-                    // <label> yo </label>
-                    index < 2 ? <Img key={node.id} fluid={node.localFile.childImageSharp.fluid} /> : null
-                  )
-                })
+                // insta.map(({ node }, index) => {
+                //   return (
+                //     // <label> yo </label>
+                //     index < 2 ? <Img key={node.id} fluid={node.localFile.childImageSharp.fluid} /> : null
+                //   )
+                // })
               }
             </div>
             <div className="column">
               {
-                insta.map(({ node }, index) => {
-                  return (
-                    // <label> yo </label>
-                    2 <= index && index < 4 ? <Img key={node.id} fluid={node.localFile.childImageSharp.fluid} /> : null
-                  )
-                })
+                // insta.map(({ node }, index) => {
+                //   return (
+                //     // <label> yo </label>
+                //     2 <= index && index < 4 ? <Img key={node.id} fluid={node.localFile.childImageSharp.fluid} /> : null
+                //   )
+                // })
               }
             </div>
             <div className="column">
               {
-                insta.map(({ node }, index) => {
-                  return (
-                    // <label> yo </label>
-                    4 <= index && index < 6 ? <Img key={node.id} fluid={node.localFile.childImageSharp.fluid} /> : null
-                  )
-                })
+                // insta.map(({ node }, index) => {
+                //   return (
+                //     // <label> yo </label>
+                //     4 <= index && index < 6 ? <Img key={node.id} fluid={node.localFile.childImageSharp.fluid} /> : null
+                //   )
+                // })
               }
             </div>
             {/* <img alt="scroll" src={"/scroll.gif"} className="scroll-animation"/> */}
@@ -163,25 +163,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    allInstaNode(limit: 25) {
-      edges {
-        node {
-          id
-          localFile {
-            childImageSharp {
-              fluid( maxWidth: 650) {
-                ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            timestamp
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          title
-        }
-      }
   }
 `   
