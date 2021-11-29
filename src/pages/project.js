@@ -34,33 +34,33 @@ class ProjectIndex extends React.Component {
 
 export default ProjectIndex
 
-export const pageQuery = graphql`
-  query ProjectIndexQuery {
-    allContentfulProject {
-        edges {
-          node {
-            id
-            projectTitle
-            toolsUsed {
-              fluid(maxHeight: 48, maxWidth: 48) {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
-              description
-            }
-            projectImages {
-              fluid(maxHeight: 200, maxWidth: 320, resizingBehavior: SCALE) {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
-            }
-            projectUrl
-            slug
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          title
-        }
-      }
-  }
-`
+// export const pageQuery = graphql`
+//   query ProjectIndexQuery {
+//     allContentfulProject {
+//         edges {
+//           node {
+//             id
+//             projectTitle
+//             toolsUsed {
+//               fluid(maxHeight: 48, maxWidth: 48) {
+//                 ...GatsbyContentfulFluid_tracedSVG
+//               }
+//               description
+//             }
+//             projectImages {
+//               fluid(maxHeight: 200, maxWidth: 320, resizingBehavior: SCALE) {
+//                 ...GatsbyContentfulFluid_tracedSVG
+//               }
+//             }
+//             projectUrl
+//             slug
+//           }
+//         }
+//       }
+//       site {
+//         siteMetadata {
+//           title
+//         }
+//       }
+//   }
+// `

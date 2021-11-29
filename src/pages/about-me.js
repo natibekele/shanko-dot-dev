@@ -49,29 +49,29 @@ class AboutMe extends React.Component {
 
 export default AboutMe
 
-export const pageQuery = graphql`
-query AboutMeQuery {
-    allContentfulPerson(filter: {contentful_id: {eq: "6FdEy4JbK00flYHnfwtFq2"}}) {
-        edges {
-          node {
-            company
-            email
-            github
-            name
-            shortBio {
-              childMarkdownRemark {
-                html
-              }
-            }
-            image {
-                fluid(maxWidth: 500, background: "rgb:000000") {
-                  ...GatsbyContentfulFluid_tracedSVG
-                }
-              }
-            title
-            twitter
-          }
-        }
-      }
-  }
-`
+// export const pageQuery = graphql`
+// query AboutMeQuery {
+//     allContentfulPerson(filter: {contentful_id: {eq: "6FdEy4JbK00flYHnfwtFq2"}}) {
+//         edges {
+//           node {
+//             company
+//             email
+//             github
+//             name
+//             shortBio {
+//               childMarkdownRemark {
+//                 html
+//               }
+//             }
+//             image {
+//                 fluid(maxWidth: 500, background: "rgb:000000") {
+//                   ...GatsbyContentfulFluid_tracedSVG
+//                 }
+//               }
+//             title
+//             twitter
+//           }
+//         }
+//       }
+//   }
+// `

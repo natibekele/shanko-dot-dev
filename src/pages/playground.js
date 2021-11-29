@@ -1,6 +1,5 @@
 import React from 'react';
 import * as styles from './playground.module.css';
-import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout.js'
 class Playground extends React.Component {
 	render() {
