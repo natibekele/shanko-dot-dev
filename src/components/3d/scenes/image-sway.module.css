@@ -1,0 +1,6 @@
+.canvas {
+	position: absolute !important;
+	top:  100%;
+	left: 0;
+	background: white;
+}

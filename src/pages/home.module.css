@@ -1,0 +1,67 @@
+.titleBorder {
+	position: absolute;
+	top:  50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-height:  32.3rem;
+	max-width: 74rem;
+	height: calc(60vw * 0.43);
+	width: 60vw;
+	border: solid 0.3rem #3d3d3d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	font-size: 13.4rem;
+	text-transform: uppercase;
+	line-height: 130%;
+	width: calc(60vw * 0.35);
+	word-wrap: break-word;
+	text-align: center;
+	color: #3d3d3d;
+}
+.imageContainer {
+	position: absolute;
+	/*height: calc(50vw * 1.5);*/
+	width: 80rem;
+	left: 0;
+	overflow: hidden;
+	transform: translate(-55%, 0%);
+	top: 20%;
+}
+
+.titleImage {
+	object-fit: contain;
+	aspect-ratio: 74 / 50;
+}
+
+.titleImage img {
+	object-fit: contain !important;
+}
+
+.canvas {
+	position: absolute !important;
+	top:  100%;
+	left: 0;
+	background: white;
+}
+
+.layout {
+	width:  100%;
+	height:  100vh;
+}
+
+.scroll {
+	height:  200vh;
+	width:  100%;
+	opacity: 0;
+}
+
+.video {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	transform: rotate(-90deg);
+}
