@@ -60,6 +60,8 @@
   /* font style */
   --less-emphasis: var(--body) var(--text-sm)/100% var(--font-sans);
   --least-emphasis: var(--body) var(--text-xs)/100% var(--font-sans);
+  --heading-1:  var(--body) var(--text-5xl)/130% var(--font-sans);
+  --heading-2:  var(--body) var(--text-2xl)/110% var(--font-sans);
 
   /* tokens */
   /* colors */

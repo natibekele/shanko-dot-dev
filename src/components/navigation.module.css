@@ -11,8 +11,8 @@
   right: 0;
   width: auto;
   height: 90vh;
-  max-height: 50.1rem;
-  position: absolute;
+  max-height: 80.1rem;
+  position: fixed;
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -67,7 +67,7 @@
 }
 
 .menuItem a {
-  font-size: 1rem;
+  font-size: 1.8rem;
   line-height: 1.125;
   letter-spacing: 0.24px;
   font-weight: 500;
@@ -91,7 +91,7 @@
   z-index: 99;
   height: calc(100vh - 56px);
   width: 100vw;
-  top: 56px;
+  top: 5.6rem;
   background: white;
   display: flex;
   justify-content: center;
@@ -101,7 +101,7 @@
   padding: 0;
 }
 .mobileMenu .menuItem {
-  margin: 32px;
+  margin: 3.2rem;
   font-size: 1.6rem;
   text-align: center;
 }
