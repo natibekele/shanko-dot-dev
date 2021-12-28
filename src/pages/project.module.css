@@ -1,8 +1,40 @@
 .projectList {
-    display: grid;
+    display: block;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 4px;
     margin: 0;
+    list-style: none;
+    margin-top: 9.5rem;
+    z-index: 1;
     /* min-height: 100vh; */
+}
+
+.pagePadding {
+    padding: 6rem 0rem 0rem 6rem;
+}
+
+.wrapper {
+    position: absolute;
+    z-index: 1;
+}
+
+.heading {
+    font:  var(--heading-2);
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    opacity: 0.9;
+}
+
+.projectImage {
+    max-width: 80rem;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    position: fixed;
+    right: 6rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    opacity: 0;
+    transition: ease-in 0.3s;
+    z-index: 0;
 }

@@ -4,28 +4,68 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import styles from './project.module.css'
 import Layout from '../components/layout'
+import ProjectListItem from '../components/project-list-item/project-list-item'
 import ProjectPreview from '../components/project-preview'
 
 class ProjectIndex extends React.Component {
+  constructor(props) {
+    super(props)
+    this.imgRef = React.createRef();
+  }
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const projects = get(this, 'props.data.allContentfulProject.edges')
 
+    const sortedProjects = projects.sort((a,b) => a.node.publishDate - b.node.publishDate)
+
+    // console.log(projects.forEach(node => node.publishedDate))
+    projects.forEach(el => console.log(el.node.publishDate))
+    console.log(sortedProjects);
+
+    let timeout;
+
+    const clickLink = (node) => {
+      console.log('click link', node);
+    }
+
+    const mapIndex = (index) => {
+      let _index = index + 1;
+      return _index < 10 ? `0${_index}/`: `${_index}/`;
+    }
+
+    const showImage = url => {
+      timeout && clearTimeout(timeout);
+
+      timeout = setTimeout(_ => {
+        this.imgRef.current.src = url;
+        this.imgRef.current.style.opacity = 0.4;
+      }, 300);
+
+    }
+
+    const hideImage = _ => {
+        this.imgRef.current.style.opacity = 0;
+    }
+
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div className={styles.pagePadding}>
           <Helmet title={siteTitle} />
-          {/* <div className={styles.hero}>Blog</div> */}
-          <div className="wrapper">
-            {/* <h2 className="section-headline">Recent articles</h2> */}
+          <h2 className={styles.heading}>Projects</h2>
+          <div className={styles.wrapper}>
             <ul className={styles.projectList}>
-              {projects.map(({ node }) => {
+              {
+                projects.map(({ node }, index) => {
                 return (
-                  <ProjectPreview project={node} />
+                  <ProjectListItem project={node} index={index} key={`project-${index}`}
+                    showProjectImage={showImage} hideProjectImage={hideImage}
+                  />
                 )
               })}
             </ul>
           </div>
+        <img className={styles.projectImage} ref={this.imgRef}/>
         </div>
       </Layout>
     )
@@ -34,33 +74,40 @@ class ProjectIndex extends React.Component {
 
 export default ProjectIndex
 
-// export const pageQuery = graphql`
-//   query ProjectIndexQuery {
-//     allContentfulProject {
-//         edges {
-//           node {
-//             id
-//             projectTitle
-//             toolsUsed {
-//               fluid(maxHeight: 48, maxWidth: 48) {
-//                 ...GatsbyContentfulFluid_tracedSVG
-//               }
-//               description
-//             }
-//             projectImages {
-//               fluid(maxHeight: 200, maxWidth: 320, resizingBehavior: SCALE) {
-//                 ...GatsbyContentfulFluid_tracedSVG
-//               }
-//             }
-//             projectUrl
-//             slug
-//           }
-//         }
-//       }
-//       site {
-//         siteMetadata {
-//           title
-//         }
-//       }
-//   }
-// `
+export const pageQuery = graphql`
+  query ProjectIndexQuery {
+    allContentfulProject {
+        edges {
+          node {
+            publishDate(difference: "milliseconds")
+            id
+            projectTitle
+            projectImages {
+              file {
+                url
+              }
+            }
+            toolsUsed {
+              fluid(maxHeight: 48, maxWidth: 48) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+              description
+            }
+            projectUrl
+            slug
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          title
+        }
+      }
+  }
+`
+
+            // projectImages {
+            //   fluid(maxHeight: 200, maxWidth: 320, resizingBehavior: SCALE) {
+            //     ...GatsbyContentfulFluid_tracedSVG
+            //   }
+            // }
