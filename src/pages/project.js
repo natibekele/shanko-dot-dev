@@ -19,15 +19,7 @@ class ProjectIndex extends React.Component {
 
     const sortedProjects = projects.sort((a,b) => a.node.publishDate - b.node.publishDate)
 
-    // console.log(projects.forEach(node => node.publishedDate))
-    projects.forEach(el => console.log(el.node.publishDate))
-    console.log(sortedProjects);
-
     let timeout;
-
-    const clickLink = (node) => {
-      console.log('click link', node);
-    }
 
     const mapIndex = (index) => {
       let _index = index + 1;

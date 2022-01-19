@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link, navigate } from 'gatsby';
 import * as styles from './project-list-item.module.css'
 
 export const ProjectListItem = (props) => {
@@ -10,7 +11,7 @@ export const ProjectListItem = (props) => {
     }
 
     const clickLink = (node) => {
-      console.log('click link', node);
+      navigate(`/project/${project.slug}/`)
     }
 
     const itemRef = useRef();
@@ -20,7 +21,6 @@ export const ProjectListItem = (props) => {
     
     const onHover = _ => {
       props.showProjectImage(project.projectImages[0].file.url)
-      // return project.projectImages[0].file.url
     }
 
     const onHoverOut = _  => {
@@ -29,7 +29,7 @@ export const ProjectListItem = (props) => {
     
 	return(
           <li className={styles.listItem} 
-	          onClick={() => clickLink(project)}
+	          onClick={clickLink}
 	          onMouseEnter={onHover}
 	          onMouseLeave={ onHoverOut}
             ref= {itemRef}
@@ -37,7 +37,7 @@ export const ProjectListItem = (props) => {
           
             <div className={styles.textWrapper}>
             	<span> { mapIndex(index)} </span>
-            	{project.projectTitle}
+              {project.projectTitle}
             </div>
 
             <span className={styles.hoverBlock}></span>

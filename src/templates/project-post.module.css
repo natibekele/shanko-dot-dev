@@ -1,31 +1,96 @@
 .projectTitle {
-
-}
-.projectLink {
-    height: 40px;
-    width: 220px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    overflow: hidden;
+    text-transform: uppercase;
+    font: var(--heading-2);
+    letter-spacing: 1.8rem;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-    cursor: pointer;
-    color: #fff;
-    background: linear-gradient(to right, #6610F2,#d11149);
-    border: none;
-    box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
 }
 
-.cToolsUsed {
+.headerLinkWrapper {
     display: flex;
     align-items: center;
-    flex: 1;
-    padding: 8px;
 }
-.tool {
-    width: 24px;
-    height: 24px;
-    margin: 8px;
+
+.backArrow {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 3.2rem;
+}
+
+.prefix {
+    opacity: 0.7;
+}
+
+.pagePadding {
+    background: var(--white);
+    padding: 6rem 0rem 0rem 6rem;
+    width: calc(100% - 12rem);
+}
+
+.toolsUsed {
+    font: var(--italic-0);
+    font-style: italic;
+    letter-spacing: 0.024rem;
+    margin-top: 2.6rem;
+    margin-left: 5.6rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.projectLink {
+    margin-left: 5.6rem;
+    margin-top: 2.4rem;
+    margin-bottom: 1.7rem;
+    font: var(--italic-0);
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+    letter-spacing: 0.024rem;
+}
+
+.right, .left {
+    width: 80%;
+    margin: 8.9rem 0;
+    position: relative;
+}
+
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+
+.decorativeBox {
+    height: 60rem;
+    width: 37.5rem;
+    position: absolute;
+    top: 50%;
+    border: solid 3px var(--black);
+    background: transparent;
+    z-index: 0;
+}
+
+.projectImage {
+    position: relative;
+    z-index: 1;
+}
+
+.right .decorativeBox {
+    right: 2%;
+}
+
+.left .decorativeBox {
+    left: 0%;
+}
+
+.right .projectImage {
+    float: right;
+    margin-right: 9.4rem;
+}
+
+.left .projectImage {
+    float: left;
+    margin-left: 9.4rem;
 }
