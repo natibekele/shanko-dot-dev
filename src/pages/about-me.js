@@ -18,12 +18,13 @@ class AboutMe extends React.Component {
                 <div style={{ background: '#fff' }}>
                     <Helmet title={siteTitle} />
                     {/* <div className={styles.hero}>Blog</div> */}
-                    <div className="wrapper">
+                    <div className={styles.wrapper}>
+                        <h2 className={styles.heading}>About</h2>
                         <div className={styles.aboutMeImage}>
                             <Img fluid={person.image.fluid} />
                         </div>
                         <div className={styles.aboutMeInfo}>
-                            <h3>{person.name}</h3>
+                            <h3 className={styles.name}>{person.name}</h3>
                             <div className={styles.card}>
                                 <div className={styles.cardItem}><span>{person.title}</span></div>
                                 <div className={styles.cardItem}><span>{person.company}</span></div>
@@ -36,7 +37,8 @@ class AboutMe extends React.Component {
                             <a className={styles.contactOption} href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
                         </div>
 
-                        <div dangerouslySetInnerHTML={{ __html: person.shortBio.childMarkdownRemark.html }}>
+                        <div className={styles.details} 
+                            dangerouslySetInnerHTML={{ __html: person.shortBio.childMarkdownRemark.html }}>
 
                         </div>
 
@@ -49,29 +51,29 @@ class AboutMe extends React.Component {
 
 export default AboutMe
 
-// export const pageQuery = graphql`
-// query AboutMeQuery {
-//     allContentfulPerson(filter: {contentful_id: {eq: "6FdEy4JbK00flYHnfwtFq2"}}) {
-//         edges {
-//           node {
-//             company
-//             email
-//             github
-//             name
-//             shortBio {
-//               childMarkdownRemark {
-//                 html
-//               }
-//             }
-//             image {
-//                 fluid(maxWidth: 500, background: "rgb:000000") {
-//                   ...GatsbyContentfulFluid_tracedSVG
-//                 }
-//               }
-//             title
-//             twitter
-//           }
-//         }
-//       }
-//   }
-// `
+export const pageQuery = graphql`
+query AboutMeQuery {
+    allContentfulPerson(filter: {contentful_id: {eq: "6FdEy4JbK00flYHnfwtFq2"}}) {
+        edges {
+          node {
+            company
+            email
+            github
+            name
+            shortBio {
+              childMarkdownRemark {
+                html
+              }
+            }
+            image {
+                fluid(maxWidth: 500, background: "rgb:000000") {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
+              }
+            title
+            twitter
+          }
+        }
+      }
+  }
+`
