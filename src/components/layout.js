@@ -20,5 +20,3 @@ class Template extends React.Component {
 }
 
 export default Template
-
-//'linear-gradient(to right, #fff,#fefefe, #661ff2, #6610f2, #d11149,#a0ddff)

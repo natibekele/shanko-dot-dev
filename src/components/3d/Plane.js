@@ -10,7 +10,7 @@ function Plane(props) {
 	return (
 		<mesh ref={mesh} {...props} >
 			<planeGeometry args={[3,3]}/>
-			<meshStandardMaterial map={texture}/>
+			<meshBasicMaterial map={texture}/>
 		</mesh>
 	);
 }

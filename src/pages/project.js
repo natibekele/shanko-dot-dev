@@ -11,6 +11,11 @@ class ProjectIndex extends React.Component {
   constructor(props) {
     super(props)
     this.imgRef = React.createRef();
+    this.timeout = null;
+  }
+
+  componentWillUnmount() {
+    this.timeout && clearTimeout(this.timeout)
   }
 
   render() {
@@ -19,17 +24,15 @@ class ProjectIndex extends React.Component {
 
     const sortedProjects = projects.sort((a,b) => a.node.publishDate - b.node.publishDate)
 
-    let timeout;
-
     const mapIndex = (index) => {
       let _index = index + 1;
       return _index < 10 ? `0${_index}/`: `${_index}/`;
     }
 
     const showImage = url => {
-      timeout && clearTimeout(timeout);
+      this.timeout && clearTimeout(this.timeout);
 
-      timeout = setTimeout(_ => {
+      this.timeout = setTimeout(_ => {
         this.imgRef.current.src = url;
         this.imgRef.current.style.opacity = 0.4;
       }, 300);

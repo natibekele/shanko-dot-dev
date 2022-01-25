@@ -24,7 +24,6 @@ class ProjectTemplate extends React.Component {
                 <div className={styles.pagePadding}>
                     <Helmet title={`${project.projectTitle} | ${siteTitle}`} />
 
-                    <div className="wrapper">
                             <h1 className={styles.projectTitle}>
                                 <Link className={styles.headerLinkWrapper} to={'/project'}>
                                     <GrLinkPrevious className={styles.backArrow}/>
@@ -46,11 +45,10 @@ class ProjectTemplate extends React.Component {
                                         <img src ={image.file.url} className={styles.projectImage} 
                                              alt={`project image ${index}`}/>
 
-                                        <div className={styles.decorativeBox} />
+                                        {project.projectImages.length -1 !== index && <div className={styles.decorativeBox} />}
                                     </div>
                         })}
                     </div>
-                </div>
             </Layout>
         )
     }

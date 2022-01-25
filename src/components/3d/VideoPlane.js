@@ -17,7 +17,7 @@ function VideoPlane(props) {
 		texture ? 
 		<mesh {...props}>
 			<planeGeometry args={[8,4.5]}/>
-			<meshLambertMaterial map={texture}/>
+			<meshBasicMaterial map={texture}/>
 		</mesh>
 
 		: null

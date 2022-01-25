@@ -11,14 +11,16 @@ class RootIndex extends React.Component {
         <div className={ styles.imageContainer }>
           <StaticImage className={styles.titleImage}
           alt="title image"
-          src="../../static/title.jpeg"/>
+          src="../../static/jesus_van.jpg"/>
         </div>
         <div className={styles.titleBorder}>
           <h1 className={styles.title}> Nathan Shanko </h1>
         </div>
 
-        <video id="video" playsInline className={styles.video} crossOrigin='anonymous' muted>
-          <source src='/test-video-2.mp4' type='video/mp4 ' />
+        <h3 className={styles.nati}>ナティ</h3>
+
+        <video id="video" playsInline className={styles.video} crossOrigin='anonymous' muted loop>
+          <source src='/test-video-2.mp4' type='video/mp4 '/>
         </video>
 
         <ImageSway />

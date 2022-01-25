@@ -1,3 +1,6 @@
+.wrapper {
+    height: auto
+}
 .projectTitle {
     text-transform: uppercase;
     font: var(--heading-2);
@@ -6,7 +9,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .headerLinkWrapper {
     display: flex;
     align-items: center;
@@ -15,7 +17,9 @@
 .backArrow {
     width: 2.4rem;
     height: 2.4rem;
-    margin-right: 3.2rem;
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    margin-right: min(3.2rem, 5vw);
 }
 
 .prefix {
@@ -26,6 +30,7 @@
     background: var(--white);
     padding: 6rem 0rem 0rem 6rem;
     width: calc(100% - 12rem);
+    height: auto;
 }
 
 .toolsUsed {
@@ -63,8 +68,8 @@
 }
 
 .decorativeBox {
-    height: 60rem;
-    width: 37.5rem;
+    height: min(60rem, 40vw);
+    width: min(37.5rem, 20vw);
     position: absolute;
     top: 50%;
     border: solid 3px var(--black);
@@ -93,4 +98,46 @@
 .left .projectImage {
     float: left;
     margin-left: 9.4rem;
+}
+
+@media(max-width: 768px) {
+    .pagePadding {
+        padding: 6rem 3rem;
+        width: calc(100% - 6rem);
+    }
+    .projectTitle {
+        font-size: 1.8rem;
+        width: 100%;
+        margin: 0 0 2.4rem 0;
+        letter-spacing: 0.9rem;
+    }
+    .headerLinkWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+    .toolsUsed {
+        margin:  0 0 1.6rem 0;
+        font-size: 1.6rem;
+    }
+    .projectLink {
+        font-size: 1.6rem;
+        margin: 0rem;
+    }
+    .right, .left {
+        width: 100%;
+        margin: 4.5rem 0;
+    }
+    .right .projectImage {
+        float: none;
+        margin: 0;
+    }
+
+    .left .projectImage {
+        float: none;
+        margin: 0;
+    }
+    .decorativeBox {
+        display: none;
+    }
 }

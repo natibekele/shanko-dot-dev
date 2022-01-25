@@ -1,13 +1,4 @@
 .cNavigation {
-  /*top: 32px;*/
-  /*left: 0;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*height: 100vh;*/
-  /* width: 15vw; */
-  /*min-width: 200px;*/
-  /*max-width: 200px;*/
-  /*font-size: 1.25em;*/
   right: 0;
   width: auto;
   height: 90vh;
@@ -15,6 +6,7 @@
   position: fixed;
   top: 50%;
   transform: translate(0, -50%);
+  z-index: 99;
 }
 
 .navigation {
@@ -86,7 +78,7 @@
   margin-right: 16px;
   cursor: pointer;
 }
-.cMobileMenu {
+.cMobileMenu, .activeMobileMenu {
   position: fixed;
   z-index: 99;
   height: calc(100vh - 56px);
@@ -96,31 +88,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--white);
+  transform: translate(100%, 0);
+  transition: ease-in-out 0.5s;
 }
 .mobileMenu {
   padding: 0;
-}
-.mobileMenu .menuItem {
-  margin: 3.2rem;
-  font-size: 1.6rem;
-  text-align: center;
 }
 .mobileMenu .menuItem a {
   font-weight: 500;
   font-size: 100%;
 }
 
+.activeMobileMenu {
+  transform: translate(0%, 0);
+}
+
 
 @media (max-width: 750px) {
   .cNavigation {
+    position: absolute;
+    top: 0;
     height: 56px;
     width: 100%;
     flex-direction: row;
-    /* margin-bottom: 8px; */
     flex-grow: 1;
     max-width: none;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    transform: none;
   }
   .navigation {
     position: absolute;
@@ -145,6 +141,9 @@
     display: none;
   }
   .mobileHamburger {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     display: flex;
   }
   .mobileHamburger svg {
@@ -154,5 +153,11 @@
   .menu {
     display: none;
   }
+  .mobileMenu .menuItem {
+    margin: 3.2rem;
+    font-size: 4rem;
+    text-align: center;
+    transform: rotate(0deg);
+}
   
 }

@@ -30,44 +30,36 @@ class Navigation extends React.Component {
             <li className={styles.menuItem}>
               <Link to="/project/">Projects</Link>
             </li>
-            <li className={styles.menuItem}>
-              <Link to="/blog/">Blog</Link>
-            </li>
+            {/*<li className={styles.menuItem}>
+              <Link to="/fun/">Fun</Link>
+            </li>*/}
             <li className={styles.menuItem}>
               <Link to="/about-me/">About</Link>
             </li>
           </ul>
 
-          {/*<div className={styles.socialLinks}>
-              <a href="https://instagram.com/natiboi" target="_blank" rel="noreferrer"><GrInstagram /></a>
-              <a href="https://twitter.com/natiboi_" target="_blank" rel="noreferrer"><GrTwitter /></a>
-              <a href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
-              <a href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
-          </div>*/}
 
           <div className={styles.mobileHamburger} onClick={this.toggleMobileMenu}>
             <GrMenu />
           </div>
-          {this.state.showMobileMenu ?
-            <div className={styles.cMobileMenu}>
+
+            <div className={this.state.showMobileMenu? styles.activeMobileMenu: styles.cMobileMenu }>
 
               <ul key={'mobile-menu'} className={styles.mobileMenu}>
                   <li className={styles.menuItem}>
-                    <Link to="/">Home</Link>
+                    <Link to="/">/ Home</Link>
                   </li>
                   <li className={styles.menuItem}>
-                    <Link to="/blog/">Blog</Link>
+                    <Link to="/project/">/ Projects</Link>
                   </li>
+                  {/*<li className={styles.menuItem}>
+                    <Link to="/fun/">Fun</Link>
+                  </li> */}
                   <li className={styles.menuItem}>
-                    <Link to="/project/">Projects</Link>
-                  </li>
-                  <li className={styles.menuItem}>
-                    <Link to="/about-me/">About Me</Link>
+                    <Link to="/about-me/">/ About</Link>
                   </li>
               </ul>
-            </div> : ''
-
-          }
+            </div> 
         </nav>
       </div>
     )
