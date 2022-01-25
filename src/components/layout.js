@@ -9,18 +9,14 @@ class Template extends React.Component {
     const { children } = this.props
 
     return (
-      <Container>
-        <div className={styles.topBar} />
-        
-        <Navigation />
+      <Container className={styles.pageLayout}>
         <div className={styles.layoutBody} >
           {children}
         </div>
+        <Navigation />
       </Container>
     )
   }
 }
 
 export default Template
-
-//'linear-gradient(to right, #fff,#fefefe, #661ff2, #6610f2, #d11149,#a0ddff)

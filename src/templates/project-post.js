@@ -1,11 +1,12 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import styles from './project-post.module.css';
 import RichTextRenderer from '../components/rich-text-renderer'
+import { GrLinkPrevious } from "react-icons/gr";
 
 
 import heroStyles from '../components/hero.module.css'
@@ -17,42 +18,37 @@ class ProjectTemplate extends React.Component {
         const project = get(this.props, 'data.contentfulProject')
         const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
-        console.log(project.projectArticle, 'PROJECT-ARTICLE')
 
         return (
             <Layout location={this.props.location}>
-                <div style={{ background: '#fff' }}>
+                <div className={styles.pagePadding}>
                     <Helmet title={`${project.projectTitle} | ${siteTitle}`} />
-                    {/* <MultiImageHero data={project.projectImages} /> */}
-                    <div className={heroStyles.hero}>
-                        <Img
-                            className={heroStyles.heroImage}
-                            alt={project.title}
-                            fluid={project.projectImages[0].fluid}
-                        />
+
+                            <h1 className={styles.projectTitle}>
+                                <Link className={styles.headerLinkWrapper} to={'/project'}>
+                                    <GrLinkPrevious className={styles.backArrow}/>
+                                    <span className={styles.prefix}> Projects / </span>
+                                    {project.projectTitle}
+                                </Link>
+                            </h1>
+
+                            <h3 className={styles.toolsUsed}> {project.toolsUsedStr}</h3>
+
+                        { project.projectUrl && 
+                            <a className={styles.projectLink} href={project.projectUrl} target={"_blank"} rel={"noreferrer"}>Check out this project here!</a> 
+                        }
+
+                        {project.projectImages.map((image,index) => {
+                            return  <div className={index % 2 == 0 ? styles.left : styles.right} 
+                                            key={`${project.projectTitle} project image ${index}`}>
+                                        
+                                        <img src ={image.file.url} className={styles.projectImage} 
+                                             alt={`project image ${index}`}/>
+
+                                        {project.projectImages.length -1 !== index && <div className={styles.decorativeBox} />}
+                                    </div>
+                        })}
                     </div>
-                    <div className="wrapper">
-                        <div className={styles.cToolsUsed}>
-                            <h1 className={styles.projectTitle}>{project.projectTitle}</h1>
-                            {project.toolsUsed.map((tool) => {
-                                return (
-                                    <Img className={styles.tool} key={tool.id} fluid={tool.fluid} />
-                                )
-                            })}
-                        </div>
-                        <a className={styles.projectLink} href={project.projectUrl} target={"_blank"} rel={"noreferrer"}>Check out this project here!</a>
-                        <p
-                            style={{
-                                display: 'block',
-                            }}
-                        >
-                            {project.publishDate}
-                        </p>
-                        <div>
-                            <RichTextRenderer node={project.projectArticle} />
-                        </div>
-                    </div>
-                </div>
             </Layout>
         )
     }
@@ -65,13 +61,14 @@ export const pageQuery = graphql`
         contentfulProject(slug: { eq: $slug }) {
             id
             projectImages {
-                fluid(maxHeight:400, maxWidth: 640, resizingBehavior: SCALE) {
-                ...GatsbyContentfulFluid_tracedSVG
-                }
+                file {
+                url
+              }
             }
             slug
             projectUrl
             projectTitle
+            toolsUsedStr
             projectArticle {
              json
             }

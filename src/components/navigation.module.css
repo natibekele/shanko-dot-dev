@@ -1,28 +1,29 @@
 .cNavigation {
-  top: 32px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  /* width: 15vw; */
-  min-width: 200px;
-  max-width: 200px;
-  font-size: 1.25em;
+  right: 0;
+  width: auto;
+  height: 90vh;
+  max-height: 80.1rem;
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 99;
 }
 
 .navigation {
-  position: fixed;
-  top: 32px;
+  height: 100%;
+  width: 100%;
 }
 .socialLinks {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 .socialLinks svg {
-  margin: 16px;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin: 0.8rem;
   cursor: pointer;
-  color: #f17105;
+  color: var(--black);
 }
 
 .navTitle {
@@ -40,22 +41,31 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .menuItem {
+  width: auto;
+  height: fit-content;
+  text-align:center;
   display: block;
-  align-items: center;
-  margin: 16px;
+  list-style: none;
+  transform: rotate(-90deg);
 }
 .menuItem:hover {
   background-color: #eeeeee;
 }
 
 .menuItem a {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #d11149;
+  font-size: 1.8rem;
+  line-height: 1.125;
+  letter-spacing: 0.24px;
+  font-weight: 500;
+  color: var(--black);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .mobileHamburger {
@@ -68,41 +78,45 @@
   margin-right: 16px;
   cursor: pointer;
 }
-.cMobileMenu {
+.cMobileMenu, .activeMobileMenu {
   position: fixed;
   z-index: 99;
   height: calc(100vh - 56px);
   width: 100vw;
-  top: 56px;
+  top: 5.6rem;
   background: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--white);
+  transform: translate(100%, 0);
+  transition: ease-in-out 0.5s;
 }
 .mobileMenu {
   padding: 0;
-}
-.mobileMenu .menuItem {
-  margin: 32px;
-  font-size: 1.6rem;
-  text-align: center;
 }
 .mobileMenu .menuItem a {
   font-weight: 500;
   font-size: 100%;
 }
 
+.activeMobileMenu {
+  transform: translate(0%, 0);
+}
+
 
 @media (max-width: 750px) {
   .cNavigation {
+    position: absolute;
+    top: 0;
     height: 56px;
     width: 100%;
     flex-direction: row;
-    /* margin-bottom: 8px; */
     flex-grow: 1;
     max-width: none;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    transform: none;
   }
   .navigation {
     position: absolute;
@@ -127,6 +141,9 @@
     display: none;
   }
   .mobileHamburger {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     display: flex;
   }
   .mobileHamburger svg {
@@ -136,5 +153,11 @@
   .menu {
     display: none;
   }
+  .mobileMenu .menuItem {
+    margin: 3.2rem;
+    font-size: 4rem;
+    text-align: center;
+    transform: rotate(0deg);
+}
   
 }

@@ -1,22 +1,4 @@
-.topBar
-{
-    position: fixed;
-    width: 100%;
-    height: 32px;
-    top: 0;
-    left: 0;
-    background: #fff;
-    z-index: 1;
-}
-
 .layoutBody {
     flex-grow: 1;
     overflow-y: scroll;
-}
-
-
-@media(max-width:750px) {
-    .topBar {
-        display: none;
-    }
 }

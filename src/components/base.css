@@ -1,37 +1,46 @@
 @font-face {
-  font-family: "Avenir";
-  font-weight: 400;
+  font-family: 'PP Eiko';
   font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans";
-  src: url("/NotoSansJP-Black.otf") format("otf"),
-       url("/NotoSansJP-Bold.otf") format("otf"),
-       url("/NotoSansJP-Light.otf") format("otf"),
-       url("/NotoSansJP-Medium.otf") format("otf"),
-       url("/NotoSansJP-Regular.otf") format("otf"),
-       url("/NotoSansJP-Think.otf") format("otf");
-  font-display: swap;
-  font-style: normal;
+  src: url(/fonts/PPEiko-Thin.otf) format('opentype');
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: "Billion Dreams";
-  src: url("/BillionDreams.ttf") format('truetype');
-  font-display: swap;
+  font-family: 'PP Eiko';
   font-style: normal;
+  src: url(/fonts/PPEiko-Medium.otf) format('opentype');
+  font-weight: 500;
 }
-body {
-  font-family: "Noto Sans", Tahoma, Arial, Helvetica, sans-serif;
-  font-size: 1em;
+
+@font-face {
+  font-family: 'PP Eiko';
+  font-style: normal;
+  src: url(/fonts/PPEiko-Heavy.otf) format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'PP Eiko';
+  font-style: italic;
+  src: url(/fonts/PPEiko-LightItalic.otf) format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'PP Eiko';
+  font-style: italic;
+  src: url(/fonts/PPEiko-BlackItalic.otf) format('opentype');
+  font-weight: 500;
+}
+
+html, body {
+  font-family: 'PP Eiko';
+  font-size: 62.5%;
   line-height: 1.65;
   color: #424447;
   background: #fefefe;
   margin: 0;
-  padding: 5vmin;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -67,135 +76,6 @@ div {
   overflow: hidden !important;
 }
 
-.wrapper {
-  /* width: calc(100% - 10vmin); */
-  margin: 0 auto;
-  padding: 0vmin 0 5vmin 0;
-  max-width: 1200px;
-}
-
-.c-introVideo {
-  width: 100%;
-  height: 71vh;
-  max-height: 600px;
-  min-width: 320px;
-  min-height: 200px;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  /* padding: 8px 0px 5vmin 0; */
-  margin-bottom: 5vmin;
-  background: lightpink;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  position: relative;
-  margin-bottom: 16px;
-}
-.scroll-animation {
-  position: absolute;
-  bottom: 35%;
-  z-index: 1;
-  left: 48%;
-  height: 80px;
-  width: 80px;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 33%;
-  max-width: 33%;
-  padding: 0 1px;
-}
-
-.column img {
-  margin-top: 1px;
-  vertical-align: middle;
-  width: 100%;
-}
-
-.project-section {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.project-card {
-  height: 16vw;
-  width: 10vw;
-  max-height: 224px;
-  max-width: 140px;
-  min-width: 100px;
-  min-height: 160px;
-  display: block;
-  border: solid 1px #eeeeee;
-  margin: 8px;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  position: relative;
-  background: #fff;
-}
-.project-card:hover {
-  box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
-}
-.project-title {
-  border-top: 1px solid lightgray;
-  font-size: 0.86rem;
-  margin-top: 8px;
-  font-weight: 500;
-  text-align: center;
-}
-.project-tool {
-  height: 32px;
-  width: 32px;
-  margin: auto;
-}
-.project-link {
-  margin: auto;
-  margin-top: 16px;
-  width: 90%;
-  min-width: 80px;
-  padding: 8px;
-  border-radius: 10px;
-  background: linear-gradient(to right, #6610F2,#d11149);
-  border: none;
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: ease-in 0.2s;
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-}
-.project-link:hover {
-  transform: scale(1.05);
-}
-
-/**
- * article grid
- */
-.article-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 5vmin;
-}
-
-/**
- *
- */
-.section-headline {
-  padding: 0 0 0.4em 0;
-  margin: 0 0 5vmin 0;
-  /* border-bottom: 1px solid #ddd; */
-}
-
 /**
  *
  */
@@ -210,49 +90,9 @@ div {
   }
 
   @media (max-width: 800px) {
-    .column {
-      flex: 49%;
-      max-width: 49%;
-    }
-    .column:nth-child(3) {
-      display: none;
-    }
-
   }
   @media(max-width: 570px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-    .column:nth-child(n+2) {
-      display: none;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
-    }
-    .project-section  {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .project-card {
-      width: 90%;
-      height: 44px;
-      max-width: none;
-      min-width: none;
-      max-height: none;
-      min-height: none;
-      flex-direction: row;
-      margin: auto;
-      margin-bottom: 16px;
-      background: #fefefe;
-    }
-    .wrapper {
-      padding: 4vmin;
-    }
-    .c-introVideo {
-      height: 200px;
-    }
+
   }
 
   /* some simple animations for transition groups */
@@ -272,3 +112,171 @@ div {
     opacity: 0.01;
     transition: opacity ease-in 0.2s;
   }
+
+::-webkit-scrollbar {
+  width: 0rem;  /* Total width including `border-width` of scrollbar thumb */
+  /* height: 0; */
+}
+
+::-webkit-scrollbar-track {
+  /*background-color: #252525;*/
+  background-color: transparent;
+  border-right: 1.75em solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+  /* height: 1em; */
+  border-right: 1.75em solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  /*background-color: #9D9D9D;*/
+  background-color: transparent;
+  max-height: 20px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+  /* background: white; */
+  /* width: 1rem; */
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+
+/* BASE VARIABLES FOR CSS */
+/* TODO PULL OUT INTO VARIABLES.CSS AND GET IT WORKING */
+
+:root {
+    font-size: 62.5%;
+  --font-sans: 'PP Eiko', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --font-serif: 'Times New Roman', Times, serif;
+
+  /* palette */
+  --white: #fff;
+  --black: #3d3d3d;
+  --black-fade-5: rgba(0, 0, 0, 0.05);
+  --black-fade-10: rgba(0, 0, 0, 0.1);
+  --black-fade-30: rgba(0,0,0,0.3);
+  --raisin-black: #1e1e24;
+  --white-gray:  #fcfcfc;
+
+
+  /* radii */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+
+  /* spacing */
+  --space-sm: 0.4rem;
+  --space-md: 0.8rem;
+  --space-lg: 1.6rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.4rem;
+  --space-3xl: 4.8rem;
+  --space-4xl: 6.9rem;
+
+  /* line-height */
+  --solid: 1;
+  --dense: 1.25;
+  --default: 1.5;
+  --loose: 1.75;
+
+  /* font-weight */
+  --thin: 100;
+  --light: 300;
+  --body: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+  --extrabold: 800;
+  --heavy: 900;
+
+  /* font-size */
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-md: 1.6rem;
+  --text-lg: 1.8rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.4rem;
+  --text-3xl: 3.6rem;
+  --text-4xl: 4.8rem;
+  --text-5xl: 6.4rem;
+  --text-6xl: 7.6rem;
+  --text-7xl: 10.4rem;
+
+  /* font style */
+  --less-emphasis: var(--body) var(--text-sm)/100% var(--font-sans);
+  --least-emphasis: var(--body) var(--text-xs)/100% var(--font-sans);
+  --paragraph: var(--body) var(--text-md)/130% var(--font-sans);
+  --heading-1:  var(--body) var(--text-5xl)/130% var(--font-sans);
+  --heading-2:  var(--body) var(--text-2xl)/110% var(--font-sans);
+  --italic-0:  var(--light) var(--text-lg)/110% var(--font-sans);
+
+  /* tokens */
+  /* colors */
+  /*--primary: var(--cerulean-blue);
+  --primary-sat: var(--cerulean-blue-100);
+  --secondary: var(--blue-jeans);
+  --tertiary: var(--xiketic);
+  --background: var(--lavender-blush);
+  --border: var(--black-fade-5);*/
+
+  /* text */
+  /* color */
+  --text-color: var(--raisin-black);
+  /* size */
+  --text-lead: var(--text-lg);
+  --text-prose: var(--text-md);
+  --text-title: var(--text-3xl);
+  /* tracking */
+  --text-prose-tracking: -0.011em;
+
+  /* size */
+  --size-gutter: var(--space-2xl);
+  --size-logo: var(--space-2xl);
+  --size-max-width: 140rem;
+
+  --gradient: linear-gradient(158deg, rgba(242,242,242,1) 4%, rgba(255,245,245,0.3) 17%, rgba(202,220,233,0.5) 51%, rgba(255,245,245,0.3) 75%, rgba(242,242,242,1) 89%);
+  --semi-black-overlay: rgba(0,0,0,0.55);
+
+  --shadow-color: 0deg 0% 80%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.45),
+    0.4px 0.8px 0.9px -1.5px hsl(var(--shadow-color) / 0.41),
+    1.1px 2.1px 2.5px -2.9px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.47),
+    0.8px 1.6px 1.9px -1px hsl(var(--shadow-color) / 0.44),
+    2.1px 4.2px 5px -2px hsl(var(--shadow-color) / 0.4),
+    5.3px 10.6px 12.5px -2.9px hsl(var(--shadow-color) / 0.37);
+  --shadow-elevation-high:
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.44),
+    1.4px 2.7px 3.2px -0.4px hsl(var(--shadow-color) / 0.42),
+    2.6px 5.2px 6.1px -0.8px hsl(var(--shadow-color) / 0.41),
+    4.5px 9px 10.6px -1.3px hsl(var(--shadow-color) / 0.39),
+    7.5px 14.9px 17.6px -1.7px hsl(var(--shadow-color) / 0.37),
+    12px 24px 28.4px -2.1px hsl(var(--shadow-color) / 0.36),
+    18.6px 37.2px 44px -2.5px hsl(var(--shadow-color) / 0.34),
+    27.8px 55.5px 65.6px -2.9px hsl(var(--shadow-color) / 0.32);
+}
+
+@media (min-width: 480px) {
+  :root {
+    --size-gutter: var(--space-3xl);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-lead: var(--text-2xl);
+    --text-title: var(--text-4xl);
+    --text-prose-tracking: -0.014em;
+    --text-prose: var(--text-lg);
+    font-size: 50.5%;
+  }
+}
