@@ -14,6 +14,7 @@ function ImageSway () {
 	}, []);
 	const canvas = useRef();
 	return (
+		
 		<Canvas className={styles.canvas} camera={{ position: [0,0,CAMERA_START]}} ref={canvas}>
 			<Camera startPos={CAMERA_START} />
 			<Suspense fallback={null}>
@@ -32,20 +33,19 @@ function ImageSway () {
 }
 
 function Camera(props) {
-	if(!window) return;
 	const { startPos } = props;
 
 	const handleScroll = (e, camera) => {
-		camera.position.z = (startPos - (window?.scrollY )) / 20;
+		camera.position.z = (startPos - (window.scrollY )) / 20;
 		if (camera.position.z < -26) camera.position.z = -26;
 	}
 
 	const { camera } = useThree();
 	useEffect(() => {
-		window?.addEventListener('scroll', (e) => handleScroll(e, camera));
+		window.addEventListener('scroll', (e) => handleScroll(e, camera));
 
 		return function cleanup () {
-			window?.removeEventListener('scroll', (e) => handleScroll(e, camera));
+			window.removeEventListener('scroll', (e) => handleScroll(e, camera));
 		};
 	}, []);
 	return null
