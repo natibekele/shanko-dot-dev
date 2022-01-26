@@ -9,19 +9,19 @@ import Layout from '../components/layout'
 class ErrorPage extends React.Component {
     render() {
         const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-        const pageNotFoundImage = get(this, 'props.data.allContentfulAsset.edges[0].node')
+        const pageNotFoundImage = get(this, 'props.data.contentfulAsset.file.url')
 
         return (
             <Layout location={this.props.location}>
                 <div style={{ background: '#fff' }}>
                     <Helmet title={siteTitle} />
-                    <div className="wrapper">
+                    <div className={styles.wrapper}>
                         <div className={styles.errorImage}>
-                            <Img fluid={pageNotFoundImage.fluid} />
+                            <img src={pageNotFoundImage} />
                         </div>
                         <div>
                             <h3>Oops, looks like you ended up somewhere unintended...</h3>
-                            <p> The page could not be found.
+                            <p className={styles.goHome}> The page could not be found.
                                  Click <span className={styles.goHome}><Link to={"/"}>here</Link></span> to go back home.
                             </p>
                         </div>
@@ -36,16 +36,13 @@ export default ErrorPage
 
 export const pageQuery = graphql`
     query FourOFourQuery {
-        allContentfulAsset(filter: {contentful_id: {eq: "3AgceIsaPi4Wz3vDEyArtt"}}) {
-            edges {
-              node {
-                id
-                fluid(maxHeight: 250, maxWidth: 250, resizingBehavior: SCALE) {
-                    ...GatsbyContentfulFluid_tracedSVG
-                }
-                title
-              }
+          contentfulAsset(contentful_id: {eq: "3AgceIsaPi4Wz3vDEyArtt"}) {
+            file {
+              url
+              fileName
+              contentType
             }
+            id
           }
         site {
             siteMetadata {

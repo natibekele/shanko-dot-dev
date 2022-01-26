@@ -7,3 +7,16 @@
 .goHome {
     color: #6610F2;
 }
+
+.wrapper {
+    padding: 4rem 6rem;
+}
+
+.goHome {
+    font: var(--paragraph);
+    color: var(--black);
+}
+
+.goHome span {
+    font-style: italic;
+}
