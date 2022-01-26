@@ -71,28 +71,30 @@ export default ProjectIndex
 
 export const pageQuery = graphql`
   query ProjectIndexQuery {
-    allContentfulProject {
-        edges {
-          node {
-            publishDate(difference: "milliseconds")
-            id
-            projectTitle
-            projectImages {
-              file {
-                url
-              }
-            }
-            toolsUsed {
-              fluid(maxHeight: 48, maxWidth: 48) {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
-              description
-            }
-            projectUrl
-            slug
+  allContentfulProject {
+    edges {
+      node {
+        projectTitle
+        projectUrl
+        publishDate
+        slug
+        id
+        projectImages {
+          file {
+            url
+          }
+        }
+        toolsUsed {
+          fluid(resizingBehavior: FILL, maxWidth: 44, maxHeight: 44) {
+            base64
+            tracedSVG
+            srcWebp
+            srcSetWebp
           }
         }
       }
+    }
+  }
       site {
         siteMetadata {
           title

@@ -16,7 +16,7 @@ export const ProjectListItem = (props) => {
 
     const itemRef = useRef();
     useEffect(() => {
-        itemRef.current.style.cursor = `url(${project.toolsUsed[0].fluid.src}), auto`;
+        itemRef.current.style.cursor = `url(${project.toolsUsed[0].fluid.srcWebp}), auto`;
     },[]);
     
     const onHover = _ => {
