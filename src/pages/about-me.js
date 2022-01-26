@@ -5,7 +5,7 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import styles from './about-me.module.css'
 import Layout from '../components/layout'
-import { GrTwitter, GrInstagram, GrLinkedinOption, GrGithub } from "react-icons/gr";
+import { GrTwitter, GrInstagram, GrLinkedinOption, GrGithub, GrMenu } from "react-icons/gr";
 
 class AboutMe extends React.Component {
     render() {
@@ -31,10 +31,10 @@ class AboutMe extends React.Component {
                             </div>
                         </div>
                         <div className={styles.contactMe}>
-                            <a className={styles.contactOptionInsta} aria-label="instagram" href="https://instagram.com/natiboi_" target="_blank" rel="noreferrer"><GrInstagram /></a>
-                            <a className={styles.contactOptionTwitter} aria-label="twitter" href="https://twitter.com/natiboi__" target="_blank" rel="noreferrer"><GrTwitter /></a>
-                            <a className={styles.contactOptionLinkedin} aria-label="linkedin" href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
-                            <a className={styles.contactOptionGithub} aria-label="github" href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
+                            <a className={styles.contactOption} href="https://instagram.com/natiboi" target="_blank" rel="noreferrer"><GrInstagram /></a>
+                            <a className={styles.contactOption} href="https://twitter.com/natiboi_" target="_blank" rel="noreferrer"><GrTwitter /></a>
+                            <a className={styles.contactOption} href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
+                            <a className={styles.contactOption} href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
                         </div>
 
                         <div className={styles.details} 
@@ -66,7 +66,7 @@ query AboutMeQuery {
               }
             }
             image {
-                fluid(maxWidth: 500, maxHeight: 500, background: "rgb:000000") {
+                fluid(maxWidth: 500, background: "rgb:000000") {
                   ...GatsbyContentfulFluid_tracedSVG
                 }
               }
