@@ -1,20 +1,15 @@
 import React, { Suspense, useEffect, useRef } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import Box from '../Box.js';
+import { Canvas, useThree } from '@react-three/fiber';
 import Plane from '../Plane.js';
 import VideoPlane from '../VideoPlane'
 import * as styles from './image-sway.module.css';
-import { useSpring, a } from '@react-spring/three';
 
 
 function ImageSway () {
-	let CAMERA_START;
-	useEffect(() => {	
-		CAMERA_START = window.innerHeight * 2 || 0;
-	}, []);
+	const isBrowser = typeof window !== 'undefined';
+	const CAMERA_START = isBrowser ? window.innerHeight * 2 : 0;
 	const canvas = useRef();
 	return (
-		
 		<Canvas className={styles.canvas} camera={{ position: [0,0,CAMERA_START]}} ref={canvas}>
 			<Camera startPos={CAMERA_START} />
 			<Suspense fallback={null}>

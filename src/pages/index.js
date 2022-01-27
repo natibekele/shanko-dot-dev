@@ -1,4 +1,4 @@
-import React, { useRef, Suspense, useEffect } from 'react';
+import React from 'react';
 import * as styles from './home.module.css';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout.js';
@@ -11,7 +11,7 @@ class RootIndex extends React.Component {
         <div className={ styles.imageContainer }>
           <StaticImage className={styles.titleImage}
           alt="title image"
-          src="../../static/jesus_van.jpg"/>
+          src="../../static/jesus-van.jpg"/>
         </div>
         <div className={styles.titleBorder}>
           <h1 className={styles.title}> Nathan Shanko </h1>
