@@ -79,8 +79,6 @@ export const pageQuery = graphql`
         }
         toolsUsed {
           fluid(resizingBehavior: FILL, maxWidth: 44, maxHeight: 44) {
-            base64
-            tracedSVG
             srcWebp
             srcSetWebp
           }
