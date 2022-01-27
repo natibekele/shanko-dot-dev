@@ -2,14 +2,10 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import styles from './project-post.module.css';
-import RichTextRenderer from '../components/rich-text-renderer'
 import { GrLinkPrevious } from "react-icons/gr";
 
-
-import heroStyles from '../components/hero.module.css'
 
 class ProjectTemplate extends React.Component {
 
@@ -39,8 +35,8 @@ class ProjectTemplate extends React.Component {
                         }
 
                         {project.projectImages.map((image,index) => {
-                            return  <div className={index % 2 == 0 ? styles.left : styles.right} 
-                                            key={`${project.projectTitle} project image ${index}`}>
+                            return  <div className={index % 2 === 0 ? styles.left : styles.right} 
+                                            key={`${project.projectTitle} project visual${index}`}>
                                         
                                         <img src ={image.file.url} className={styles.projectImage} 
                                              alt={`project image ${index}`}/>

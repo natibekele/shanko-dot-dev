@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './navigation.module.css'
-import { GrTwitter, GrInstagram, GrLinkedinOption, GrGithub, GrMenu } from "react-icons/gr";
+import { GrMenu } from "react-icons/gr";
 
 class Navigation extends React.Component {
   constructor(props) {

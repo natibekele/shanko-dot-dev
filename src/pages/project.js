@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 import styles from './project.module.css'
 import Layout from '../components/layout'
 import ProjectListItem from '../components/project-list-item/project-list-item'
-import ProjectPreview from '../components/project-preview'
 
 class ProjectIndex extends React.Component {
   constructor(props) {
@@ -22,12 +21,6 @@ class ProjectIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const projects = get(this, 'props.data.allContentfulProject.edges')
 
-    const sortedProjects = projects.sort((a,b) => a.node.publishDate - b.node.publishDate)
-
-    const mapIndex = (index) => {
-      let _index = index + 1;
-      return _index < 10 ? `0${_index}/`: `${_index}/`;
-    }
 
     const showImage = url => {
       this.timeout && clearTimeout(this.timeout);
@@ -60,7 +53,7 @@ class ProjectIndex extends React.Component {
               })}
             </ul>
           </div>
-        <img className={styles.projectImage} ref={this.imgRef}/>
+        <img className={styles.projectImage} ref={this.imgRef} alt="active project"/>
         </div>
       </Layout>
     )

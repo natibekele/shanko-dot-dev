@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 import * as styles from './project-list-item.module.css'
 
 export const ProjectListItem = (props) => {

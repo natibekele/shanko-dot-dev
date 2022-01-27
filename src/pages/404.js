@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import styles from './404.module.css'
@@ -17,7 +16,7 @@ class ErrorPage extends React.Component {
                     <Helmet title={siteTitle} />
                     <div className={styles.wrapper}>
                         <div className={styles.errorImage}>
-                            <img src={pageNotFoundImage} />
+                            <img alt="404 gif" src={pageNotFoundImage} />
                         </div>
                         <div>
                             <h3>Oops, looks like you ended up somewhere unintended...</h3>
