@@ -21,6 +21,11 @@ class ProjectIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const projects = get(this, 'props.data.allContentfulProject.edges')
 
+    const projectTimesMap = new Map();
+    
+    projects.forEach(item => projectTimesMap.set(item, new Date(item.node.publishDate)))
+    projects.sort((a,b) => projectTimesMap.get(b) - projectTimesMap.get(a));
+
 
     const showImage = url => {
       this.timeout && clearTimeout(this.timeout);

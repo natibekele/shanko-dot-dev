@@ -45,7 +45,11 @@ class Navigation extends React.Component {
           </ul>
 
 
-          <div className={styles.mobileHamburger} onClick={this.toggleMobileMenu}>
+          <div className={styles.mobileHamburger}
+            role="button"
+            tabIndex="0"
+            onClick={this.toggleMobileMenu}
+            onKeyPress={ (e) => (e.keyCode === 13 && this.toggleMobileMenu) }>
             <GrMenu />
           </div>
 

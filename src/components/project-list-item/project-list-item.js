@@ -17,7 +17,7 @@ export const ProjectListItem = (props) => {
     const itemRef = useRef();
     useEffect(() => {
         itemRef.current.style.cursor = `url(${project.toolsUsed[0].fluid.srcWebp}), auto`;
-    },[]);
+    },[project.toolsUsed]);
     
     const onHover = _ => {
       props.showProjectImage(project.projectImages[0].file.url)
@@ -28,14 +28,18 @@ export const ProjectListItem = (props) => {
     }
     
 	return(
-          <li className={styles.listItem} 
-	          onClick={clickLink}
-	          onMouseEnter={onHover}
-	          onMouseLeave={ onHoverOut}
+          <li className={styles.listItem}
             ref= {itemRef}
 	          >
           
-            <div className={styles.textWrapper}>
+            <div className={styles.textWrapper}
+              role="link"
+              tabIndex="0"
+              onClick={clickLink}
+              onKeyPress={ (e) => (e.keyCode === 14 && clickLink()) }
+              onMouseEnter={onHover}
+              onMouseLeave={ onHoverOut}
+            >
             	<span> { mapIndex(index)} </span>
               {project.projectTitle}
             </div>

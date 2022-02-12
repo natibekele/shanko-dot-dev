@@ -31,10 +31,10 @@ class AboutMe extends React.Component {
                             </div>
                         </div>
                         <div className={styles.contactMe}>
-                            <a className={styles.contactOption} href="https://instagram.com/natiboi" target="_blank" rel="noreferrer"><GrInstagram /></a>
-                            <a className={styles.contactOption} href="https://twitter.com/natiboi_" target="_blank" rel="noreferrer"><GrTwitter /></a>
-                            <a className={styles.contactOption} href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
-                            <a className={styles.contactOption} href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
+                            <a className={styles.contactOption} aria-label="instagram" href="https://instagram.com/natiboi" target="_blank" rel="noreferrer"><GrInstagram /></a>
+                            <a className={styles.contactOption} aria-label="twitter" href="https://twitter.com/natiboi_" target="_blank" rel="noreferrer"><GrTwitter /></a>
+                            <a className={styles.contactOption} aria-label="linkedin" href="https://www.linkedin.com/in/nathan-shanko-5330b4a8/" target="_blank" rel="noreferrer"><GrLinkedinOption /></a>
+                            <a className={styles.contactOption} aria-label="github" href="https://github.com/natibekele" target="_blank" rel="noreferrer"><GrGithub /></a>
                         </div>
 
                         <div className={styles.details} 

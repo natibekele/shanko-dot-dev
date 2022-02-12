@@ -39,7 +39,7 @@ class ProjectTemplate extends React.Component {
                                             key={`${project.projectTitle} project visual${index}`}>
                                         
                                         <img src ={image.file.url} className={styles.projectImage} 
-                                             alt={`project image ${index}`}/>
+                                             alt={`project visuals ${index}`}/>
 
                                         {project.projectImages.length -1 !== index && <div className={styles.decorativeBox} />}
                                     </div>
