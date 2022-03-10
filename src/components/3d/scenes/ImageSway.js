@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useRef } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import Plane from '../Plane.js';
-import VideoPlane from '../VideoPlane'
+// import VideoPlane from '../VideoPlane'
 import * as styles from './image-sway.module.css';
 
 
@@ -15,13 +15,20 @@ function ImageSway () {
 			<Suspense fallback={null}>
 				{/*<ambientLight color={'#000'}/>*/}
 				{/* <pointLight position={[0, 0, 20]} color={'#dddddd'} intensity={0.1}/> */}
-				<Plane position={[ 0, 0, 0]}/>
+				
+				<Plane position={[ 0, 0, 0]} src={'/SAN_FRAN.jpg'}/>
 				<Plane position={[ -2, 0, -5]} src={'/sub-frame.jpg'}/>
 				<Plane position={[ 2, 0, -10]} src={'/float.jpg'}/>
 				<Plane position={[ -2, 0, -15]} src={'/woman-lines.jpg'}/>
-				<Plane position={[ 2, 0, -20]} src={'/triangle.jpg'}/>
-				<Plane position={[ -2, 0, -25]} src={'/mountain.jpg'}/>
-				<VideoPlane position={[0, 0, -30]}/>
+				<Plane position={[ 2, 0, -20]} src={'/DELOREAN.jpg'}/>
+				<Plane position={[ -2, 0, -25]} src={'/DONDA.jpg'}/>
+				<Plane position={[ -2, 0, -30]} src={'/MIAMI.jpg'}/>
+				<Plane position={[ -2, 0, -35]} src={'/LA-1.jpg'}/>
+				<Plane position={[ 2, 0, -40]} src={'/MIRRORS.jpg'}/>
+				<Plane position={[ 2, 0, -45]} src={'/PR.jpg'}/>
+				<Plane position={[ 2, 0, -50]} src={'/NY.jpg'}/>
+				
+				{/* TODO <VideoPlane position={[0, 0, -30]}/> */}
 			</Suspense>
 		</Canvas>
 	)
@@ -32,7 +39,7 @@ function Camera(props) {
 
 	const handleScroll = (e, camera) => {
 		camera.position.z = (startPos - (window.scrollY )) / 20;
-		if (camera.position.z < -26) camera.position.z = -26;
+		if (camera.position.z < -45) camera.position.z = -45;
 	}
 
 	const { camera } = useThree();
