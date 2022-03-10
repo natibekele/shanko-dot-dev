@@ -30,13 +30,13 @@
     position: absolute;
     top: 0;
     right: 105%;
-    background: var(--black);
+    background: #3d3d3d;
     transition: ease-in-out 0.5s;
     z-index: 0;
 }
 
 .listItem:hover {
-    color: var(--white);
+    color: #fff;
 }
 
 .listItem:hover .hoverBlock {
