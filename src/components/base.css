@@ -38,7 +38,9 @@ html, body {
   font-size: 62.5%;
   line-height: 1.65;
   color: #424447;
-  background: #fefefe;
+  /*background: #fefefe;*/
+  background-image: url(/bg_noise.png);
+  background-color: currentColor;
   margin: 0;
   scroll-behavior: smooth;
 }

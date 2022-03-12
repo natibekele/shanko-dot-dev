@@ -1,6 +1,6 @@
 .container {
     display: flex; 
-    background: white;
+    background: transparent;
     /* position: fixed; */
     /* width: calc(100% - 5vw); */
     overflow: hidden;

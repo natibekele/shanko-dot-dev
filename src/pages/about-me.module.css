@@ -75,7 +75,7 @@
 }
 .details ul {
     font: var(--paragraph);
-    background: #f3f3f3;
+    background: var(--black-fade-5);
     padding: 6rem;
 }
 
