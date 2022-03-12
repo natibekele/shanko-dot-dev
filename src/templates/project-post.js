@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import Layout from '../components/layout'
 import styles from './project-post.module.css';
 import { GrLinkPrevious } from "react-icons/gr";
+import meta from '../utils/meta'
 
 
 class ProjectTemplate extends React.Component {
@@ -18,7 +19,7 @@ class ProjectTemplate extends React.Component {
         return (
             <Layout location={this.props.location}>
                 <div className={styles.pagePadding}>
-                    <Helmet title={`${project.projectTitle} | ${siteTitle}`} />
+                    <Helmet title={`${project.projectTitle} | ${siteTitle}`} meta={meta}/>
 
                             <h1 className={styles.projectTitle}>
                                 <Link className={styles.headerLinkWrapper} to={'/project'}>

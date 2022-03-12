@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import styles from './project.module.css'
 import Layout from '../components/layout'
 import ProjectListItem from '../components/project-list-item/project-list-item'
+import meta from '../utils/meta'
 
 class ProjectIndex extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class ProjectIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div className={styles.pagePadding}>
-          <Helmet title={siteTitle} />
+          <Helmet title={siteTitle} meta={meta}/>
           <h2 className={styles.heading}>Projects</h2>
           <div className={styles.wrapper}>
             <ul className={styles.projectList}>
@@ -91,16 +92,11 @@ export const pageQuery = graphql`
       }
     }
   }
-      site {
+  
+  site {
         siteMetadata {
           title
         }
       }
   }
 `
-
-            // projectImages {
-            //   fluid(maxHeight: 200, maxWidth: 320, resizingBehavior: SCALE) {
-            //     ...GatsbyContentfulFluid_tracedSVG
-            //   }
-            // }

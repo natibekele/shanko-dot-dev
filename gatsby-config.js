@@ -23,9 +23,11 @@ if (!spaceId || !accessToken) {
   );
 }
 
+const title = 'Nathan Shanko';
+
 module.exports = {
   siteMetadata: {
-    title: "shanko",
+    title
   },
   pathPrefix: "/gatsby-contentful-starter",
   plugins: [
