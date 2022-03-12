@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 import styles from './project.module.css'
 import Layout from '../components/layout'
 import ProjectListItem from '../components/project-list-item/project-list-item'
-import meta from '../utils/meta'
 
 class ProjectIndex extends React.Component {
   constructor(props) {
@@ -19,7 +18,7 @@ class ProjectIndex extends React.Component {
   }
 
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const { title, meta }  = get(this, 'props.data.site.siteMetadata')
     const projects = get(this, 'props.data.allContentfulProject.edges')
 
     const projectTimesMap = new Map();
@@ -45,7 +44,7 @@ class ProjectIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div className={styles.pagePadding}>
-          <Helmet title={siteTitle} meta={meta}/>
+          <Helmet title={title} meta={meta}/>
           <h2 className={styles.heading}>Projects</h2>
           <div className={styles.wrapper}>
             <ul className={styles.projectList}>
@@ -96,6 +95,10 @@ export const pageQuery = graphql`
   site {
         siteMetadata {
           title
+          meta {
+            content
+            property
+          }
         }
       }
   }

@@ -6,18 +6,16 @@ import { Helmet } from 'react-helmet'
 import styles from './about-me.module.css'
 import Layout from '../components/layout'
 import { GrTwitter, GrInstagram, GrLinkedinOption, GrGithub } from "react-icons/gr";
-import meta from '../utils/meta'
 
 class AboutMe extends React.Component {
     render() {
-        const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+        const { title, meta }  = get(this, 'props.data.site.siteMetadata')
         const person = get(this, 'props.data.allContentfulPerson.edges[0].node')
-        console.log(person)
 
         return (
             <Layout location={this.props.location}>
                 <div>
-                    <Helmet title={siteTitle} meta={meta} />
+                    <Helmet title={title} meta={meta} />
                     <div className={styles.wrapper}>
                         <h2 className={styles.heading}>About</h2>
                         <div className={styles.aboutMeImage}>
@@ -79,6 +77,10 @@ query AboutMeQuery {
     site {
         siteMetadata {
             title
+            meta {
+                content
+                property
+            }
         }
     }
   }

@@ -5,7 +5,6 @@ import get from 'lodash/get'
 import Layout from '../components/layout'
 import styles from './project-post.module.css';
 import { GrLinkPrevious } from "react-icons/gr";
-import meta from '../utils/meta'
 
 
 class ProjectTemplate extends React.Component {
@@ -13,13 +12,13 @@ class ProjectTemplate extends React.Component {
 
     render() {
         const project = get(this.props, 'data.contentfulProject')
-        const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+        const { title, meta }  = get(this, 'props.data.site.siteMetadata')
 
 
         return (
             <Layout location={this.props.location}>
                 <div className={styles.pagePadding}>
-                    <Helmet title={`${project.projectTitle} | ${siteTitle}`} meta={meta}/>
+                    <Helmet title={`${project.projectTitle} | ${title}`} meta={meta}/>
 
                             <h1 className={styles.projectTitle}>
                                 <Link className={styles.headerLinkWrapper} to={'/project'}>
@@ -76,6 +75,10 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
               title
+              meta {
+                content
+                property
+              }
             }
           }
     }
