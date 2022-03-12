@@ -24,7 +24,10 @@ if (!spaceId || !accessToken) {
 }
 
 const desc = `Hi, I'm Nathan! 👋
-  Welcome to portfolio. Always trying to learn, always trying to be great. `;
+  Welcome to my portfolio. Always trying to learn, always trying to be great. 
+  Creativity is contagious, so pass it on!
+
+  Nathan Shanko: Software Developer`;
 
 const siteUrl = `https://www.shanko.dev`;
 const title = 'Nathan Shanko';
