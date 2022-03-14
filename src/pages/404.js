@@ -12,7 +12,7 @@ class ErrorPage extends React.Component {
 
         return (
             <Layout location={this.props.location}>
-                <div style={{ background: '#fff' }}>
+                <div>
                     <Helmet title={siteTitle} />
                     <div className={styles.wrapper}>
                         <div className={styles.errorImage}>
