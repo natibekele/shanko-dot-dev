@@ -81,14 +81,13 @@
 .cMobileMenu, .activeMobileMenu {
   position: fixed;
   z-index: 99;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 6.4rem);
   width: 100vw;
-  top: 5.6rem;
-  background: white;
+  top: 6.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--white);
+  background: var(--white-opaque95);
   transform: translate(100%, 0);
   transition: ease-in-out 0.5s;
 }
@@ -128,7 +127,7 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 8px 0 0 0 ;
-    background: #fff;
+    background: var(--white-opaque95);
   }
   .navTitle {
     margin: 0;
