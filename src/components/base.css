@@ -38,8 +38,7 @@ html, body {
   font-size: 62.5%;
   line-height: 1.65;
   color: #424447;
-  /*background: #fefefe;*/
-  background-image: url(/bg_noise.png);
+  background: fixed url(/bg_noise.png);
   background-color: currentColor;
   margin: 0;
   scroll-behavior: smooth;
@@ -153,6 +152,7 @@ p {
 
   /* palette */
   --white: #fff;
+  --white-opaque95: rgba(255,255,255,0.95);
   --black: #3d3d3d;
   --black-fade-5: rgba(0, 0, 0, 0.05);
   --black-fade-10: rgba(0, 0, 0, 0.1);
