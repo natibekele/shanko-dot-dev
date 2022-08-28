@@ -87,7 +87,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--white-opaque95);
+  background: rgba(255,255,255,0.95);
   transform: translate(100%, 0);
   transition: ease-in-out 0.5s;
 }
@@ -127,7 +127,7 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 8px 0 0 0 ;
-    background: var(--white-opaque95);
+    background: rgba(255,255,255,0.95);
   }
   .navTitle {
     margin: 0;
