@@ -36,9 +36,9 @@ class Navigation extends React.Component {
             <li className={styles.menuItem}>
               <Link to="/project/">Projects</Link>
             </li>
-            {/*<li className={styles.menuItem}>
-              <Link to="/fun/">Fun</Link>
-            </li>*/}
+            <li className={styles.menuItem}>
+              <Link to="/blog/">Blog</Link>
+            </li>
             <li className={styles.menuItem}>
               <Link to="/about-me/">About</Link>
             </li>
@@ -62,9 +62,9 @@ class Navigation extends React.Component {
                   <li className={styles.menuItem}>
                     <Link to="/project/">/ Projects</Link>
                   </li>
-                  {/*<li className={styles.menuItem}>
-                    <Link to="/fun/">Fun</Link>
-                  </li> */}
+                  <li className={styles.menuItem}>
+                    <Link to="/blog/">/ Blog</Link>
+                  </li> 
                   <li className={styles.menuItem}>
                     <Link to="/about-me/">/ About</Link>
                   </li>

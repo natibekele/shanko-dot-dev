@@ -15,22 +15,17 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div className={styles.wrapper}>
+          <h2 className={styles.heading}>{post.title}</h2>
           <Helmet title={`${post.title} | ${siteTitle}`} />
           <div className={heroStyles.hero}>
-            <Img
+            <img
               className={heroStyles.heroImage}
               alt={post.title}
-              fluid={post.heroImage.fluid}
+              src={post.heroImage.file.url}
             />
           </div>
-          <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
+            <p className={styles.publishDate}>
               {post.publishDate}
             </p>
             <div className={styles.blogBody}
@@ -38,7 +33,6 @@ class BlogPostTemplate extends React.Component {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
-          </div>
         </div>
       </Layout>
     )
@@ -47,26 +41,31 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
-// export const pageQuery = graphql`
-//   query BlogPostBySlug($slug: String!) {
-//     contentfulBlogPost(slug: { eq: $slug }) {
-//       title
-//       publishDate(formatString: "MMMM Do, YYYY")
-//       heroImage {
-//         fluid(maxWidth: 1180, background: "rgb:000000") {
-//           ...GatsbyContentfulFluid_tracedSVG
-//         }
-//       }
-//       body {
-//         childMarkdownRemark {
-//           html
-//         }
-//       }
-//     }
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      publishDate(formatString: "MMMM / DD/ YYYY")
+      heroImage {
+        file {
+          url
+        }
+        fluid {
+          srcSetWebp
+          srcWebp
+          src
+        }
+      }
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

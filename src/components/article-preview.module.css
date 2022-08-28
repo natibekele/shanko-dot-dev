@@ -1,24 +1,26 @@
 .preview {
   border: solid 1px #eeeeee;
-  height: 440px;
-  width: 275px;
-  border-radius: 8px;
+  height: auto;
+  width: 440px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   background: #fff;
-  margin: auto;
+  margin: 1.6rem auto;
+  box-shadow: 2px 6px 12px rgba(0,0,0,0.2);
+  border-radius: 0.4rem;
   /* transition: ease-in 0.05s; */
 }
 .preview:hover {
-  box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+  /*box-shadow: 2px 4px 6px rgba(0,0,0,0.2);*/
   /* transform: scale(1.01); */
 }
 .previewBody {
   padding: 0px 8px;
 }
 .previewTitle {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  margin: 0.8rem 0;
 }
 .previewIntro {
   text-overflow: ellipsis;
@@ -63,6 +65,10 @@
   border-radius: 2px;
   border: 1px solid #A0A0A0;
   margin-right: .5em;
+}
+
+small {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 800px) {
