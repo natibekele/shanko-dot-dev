@@ -22,10 +22,10 @@ function ImageSway () {
 				<Plane position={[ -2, 0, -15]} src={'/woman-lines.jpg'}/>
 				<Plane position={[ 2, 0, -20]} src={'/DELOREAN.jpg'}/>
 				<Plane position={[ -2, 0, -25]} src={'/DONDA.jpg'}/>
-				<Plane position={[ -2, 0, -30]} src={'/MIAMI.jpg'}/>
+				<Plane position={[ 2, 0, -30]} src={'/MIAMI.jpg'}/>
 				<Plane position={[ -2, 0, -35]} src={'/LA-1.jpg'}/>
 				<Plane position={[ 2, 0, -40]} src={'/MIRRORS.jpg'}/>
-				<Plane position={[ 2, 0, -45]} src={'/PR.jpg'}/>
+				<Plane position={[ -2, 0, -45]} src={'/PR.jpg'}/>
 				<Plane position={[ 2, 0, -50]} src={'/NY.jpg'}/>
 				
 				{/* TODO <VideoPlane position={[0, 0, -30]}/> */}
